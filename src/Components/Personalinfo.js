@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useGlobalcontext } from "../Context";
 
 const Personalinfo = () => {
+  const {next,prev}=useGlobalcontext()
 
   const handlesubmit=(e)=>{
     e.preventDefault();
@@ -101,6 +103,15 @@ const Personalinfo = () => {
         />
         </div>
       </form>
+
+      
+    <div>
+        
+        <button onClick={next}> next </button>
+        <button onClick={prev}> prev</button>
+    </div>
+
+      
     </div>
   );
 };

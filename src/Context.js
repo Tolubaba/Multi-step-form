@@ -5,33 +5,52 @@ const AppContext=createContext();
 
 const AppProvider = ({children}) => {
 
-    const [isChecked,setischecked]=useState(false);
-    const [selectetedoption,setselectedoption]=useState([])
+    
+
+
+    const [isChecked,setischecked]=useState({
+        Onlineservice:'false',
+        LargerStoarge:'false',
+        CustomizableProfile:'false'
+
+    });
+    const [selectedoption,setselectedoption]=useState([])
+
+    
+  const [step, setstep]=useState(3)
+
+  const next= ()=>{
+    setstep((oldstep)=> oldstep +1)
+  }
+  
+  const prev= ()=>{
+    setstep((oldstep)=> oldstep -1)
+  }
     
 
 
     const handlechecked=(e)=>{
-        setischecked(e.target.checked)
+        setischecked({...isChecked,[e.target.name]:e.target.checked})
         const value=e.target.value
 
         if(e.target.checked){
-            setselectedoption([...selectetedoption,value])
+            setselectedoption([...selectedoption,value])
             
         }
         
         else{
-            setselectedoption(selectetedoption.filter(option=>option!==value))
+            setselectedoption(selectedoption.filter(option=>option!==value))
         }
 
 
         }
-        console.log(selectetedoption)
+        console.log(selectedoption)
     
 
 
 
   return (
-    <AppContext.Provider value={{isChecked,handlechecked,selectetedoption}}>
+    <AppContext.Provider value={{isChecked,handlechecked,selectedoption,next,prev,step}}>
 {children}
 
     </AppContext.Provider>

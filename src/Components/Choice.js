@@ -6,8 +6,12 @@ import arcade from "../assets/images/icon-arcade.svg";
 import advanced from "../assets/images/icon-advanced.svg";
 import pro from "../assets/images/icon-pro.svg";
 import Data from "./Data";
+import { useGlobalcontext } from "../Context";
 
 const Plan = ({time ,changetime}) => {
+
+  const {next,prev}=useGlobalcontext()
+  const [pick,setpick]=useState('')
 
 
 
@@ -21,6 +25,10 @@ const Plan = ({time ,changetime}) => {
 
   const setbackground = (index) => {
     setpage(index)
+    console.log(page)
+
+    setpick(index)
+
   
     
 
@@ -84,9 +92,21 @@ const Plan = ({time ,changetime}) => {
         </div>
         <p> yearly</p>
       </div>
+
+
+
+      
+    <div>
+        
+        <button onClick={next}> next </button>
+        <button onClick={prev}> prev</button>
     </div>
+    </div>
+
+    
     
   );
+  
 
   
 

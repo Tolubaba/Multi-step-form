@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useRef } from 'react';
 import Singleadd from './singleadd';
 import { addOns } from './Data';
+import { useGlobalcontext } from '../Context';
 
 const Adds = ({time}) => {
+    const {next,prev}=useGlobalcontext()
    
-
+ 
   return (
     <div className='div-adds-on'> 
     <h1> Pick-add-ons</h1>
@@ -21,6 +23,13 @@ const Adds = ({time}) => {
 
 
     })}
+
+    <div>
+        
+        <button onClick={next}> next </button>
+        <button onClick={prev}> prev</button>
+    </div>
+
 
     
 

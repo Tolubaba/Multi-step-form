@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useGlobalcontext } from '../Context';
 const Singleadd = ({time,name,text,yearly,monthly}) => {
 
-    const {handlechecked}=useGlobalcontext()
+    const {handlechecked,isChecked}=useGlobalcontext()
 
    
   return (
@@ -11,7 +11,7 @@ const Singleadd = ({time,name,text,yearly,monthly}) => {
         
 
     <div className='online-div'>
-    <input type='checkbox' className='checkbox' value={name} onChange={handlechecked}/> 
+    <input type='checkbox' className='checkbox'  checked={isChecked[name]} value={name} name={name} onChange={handlechecked}/> 
 
     <div>
         
