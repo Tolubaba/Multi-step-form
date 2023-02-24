@@ -124,7 +124,11 @@ height: 30vh;
     
 
 }
-.button{
+button {
+
+    &:focus{
+        outline: none;
+    }
 
 }
 
@@ -136,7 +140,6 @@ height: 30vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: green;
     
 }
 

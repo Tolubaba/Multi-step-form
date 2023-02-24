@@ -48,7 +48,8 @@ const AppProvider = ({children}) => {
     }
     if (!email) {
       errors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
+    } else if (! /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\. [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.
+    test(email)) {
       errors.email = 'Email is invalid';
     } else{
         errors.email=''   
@@ -56,8 +57,9 @@ const AppProvider = ({children}) => {
 
     if (!number) {
       errors.number = 'Phone Number is required';
-    } else if (number.length < 11) {
-      errors.number = 'Password must be at least 11 characters long';
+    } else if ( !/^\+?\d{8,14}$/.test(number.replace(/\s+/g,""))
+    ) {
+      errors.number = 'Phone number not correct';
     }else{
         
         
@@ -66,7 +68,6 @@ const AppProvider = ({children}) => {
 
 
 setErrors(errors)
-console.log(Object.values(errors))
 
      
   }
@@ -94,12 +95,13 @@ console.log(Object.values(errors))
   const [step, setstep]=useState(1)
 
   const next= ()=>{
-    
-    handleSubmit()
+
+    handleSubmit();
 
     if(step===1){
-        if((name)&&(email)&&(number)){
+        if((name)&&(email && /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\. [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))&&(number && /^\+?\d{8,14}$/.test(number.replace(/\s+/g,"")))){
             setstep((oldstep)=> oldstep +1)
+            console.log('tolu')
         }
         else{
             setstep((oldstep)=>oldstep)
