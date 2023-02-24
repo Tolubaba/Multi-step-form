@@ -24,11 +24,7 @@ const Adds = ({time}) => {
 
     })}
 
-    <div>
-        
-        <button onClick={next}> next </button>
-        <button onClick={prev}> prev</button>
-    </div>
+    
 
 
     

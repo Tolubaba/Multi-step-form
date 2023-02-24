@@ -6,9 +6,7 @@ import { useGlobalcontext } from "../Context";
 const Personalinfo = () => {
   const {next,prev}=useGlobalcontext()
 
-  const handlesubmit=(e)=>{
-    e.preventDefault();
-  }
+  
 
   const [formvalues, setformvalues] = useState({
     name: "",
@@ -42,6 +40,11 @@ const Personalinfo = () => {
     return errors[fieldname]?'input-error':''
   }
 
+  const handlesubmit=(e)=>{
+    e.preventDefault();
+    validate()
+  }
+
 
 
   return (
@@ -73,7 +76,7 @@ const Personalinfo = () => {
         <div>
           <label htmlFor="email"> Email Address</label>
         <input
-        typeof="email"
+        type="email"
           value={formvalues.email}
           placeholder='e.g. stephenking@lorem.com'
           id="email"
@@ -91,7 +94,7 @@ const Personalinfo = () => {
         <div>
           <label htmlFor="phone"> Phone number</label>
         <input
-        type='text'
+        type='number'
           value={formvalues.phoneno}
           placeholder='e.g. +1 2 3 4 5 6 7 8 9 0'
           id="phone"
@@ -101,15 +104,15 @@ const Personalinfo = () => {
             setformvalues({ ...formvalues, phoneno: e.target.value })
           }
         />
+        {errors.name && <small> {errors.name}</small>}
         </div>
       </form>
-
       
-    <div>
-        
-        <button onClick={next}> next </button>
-        <button onClick={prev}> prev</button>
-    </div>
+<div>
+  <button onClick={validate}> click me</button>
+</div>
+
+    
 
       
     </div>

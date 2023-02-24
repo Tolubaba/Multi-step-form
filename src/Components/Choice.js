@@ -1,4 +1,5 @@
 import React, { createContext } from "react";
+
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -10,32 +11,38 @@ import { useGlobalcontext } from "../Context";
 
 const Plan = ({time ,changetime}) => {
 
-  const {next,prev}=useGlobalcontext()
-  const [pick,setpick]=useState('')
+  const {next,prev,pick,setpick,page,setpage,setpick1,setpick2}=useGlobalcontext()
+  
 
 
 
-    const ref4=useRef(null)
+  const refs=useRef([])
+  const refs1=useRef([])
+  const refs2=useRef([])
    
-    const [page,setpage]=useState(0)
+    
 
     
 
   
 
-  const setbackground = (index) => {
+const setbackground = (index) => {
     setpage(index)
-    console.log(page)
-
-    setpick(index)
-
+  if(time){
+    setpick1(refs1.current[index].textContent.slice(2,-3))
+  }
+  else{
+    setpick1(refs2.current[index].textContent.slice(1,-3))
+  }
   
-    
 
     
     
+    setpick(refs.current[index].textContent)
+  
 
   };
+
 
   return (
     
@@ -47,7 +54,7 @@ const Plan = ({time ,changetime}) => {
 
         
       <h1>Select your plan </h1>
-      <p> you have the option of monthly or yearly biling</p>
+      <p className="planp"> you have the option of monthly or yearly biling</p>
       <div className="chooseplan">
 
       {Data.map(( item,index)=>{
@@ -56,18 +63,18 @@ const Plan = ({time ,changetime}) => {
 
             
             <div className={`${name} ${index==page?'background':''}`} key={index} onClick={()=>setbackground(index)}>
-            <div>
+            <div className="planword">
               <img src={img} alt="name" />
             </div>
             <div className="word">
-              <h4 ref={ref4}>{name}</h4>
+              <h4 ref={el=>(refs.current[index]=el)} >{name}</h4>
               {time ? (
                 <div>
   
-                  <p> {year}</p> <small>{free}</small>
+                  <p ref={el=>(refs1.current[index]=el)}> {`$${year}/yr`}</p> <small>{free}</small>
                 </div>
               ) : (
-                <p>{month}</p>
+                <p ref={el=>(refs2.current[index]=el)}>{`$${month}/mo`}</p>
               )}
             </div>
           </div>
@@ -90,17 +97,10 @@ const Plan = ({time ,changetime}) => {
             onClick={changetime}
           ></button>
         </div>
-        <p> yearly</p>
+        <p> Yearly</p>
       </div>
 
 
-
-      
-    <div>
-        
-        <button onClick={next}> next </button>
-        <button onClick={prev}> prev</button>
-    </div>
     </div>
 
     

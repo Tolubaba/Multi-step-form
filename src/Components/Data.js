@@ -8,8 +8,8 @@ const Data =[
     {
         name:'Arcade',
         img:arcade,
-        year:'$90/yr',
-        month:'$9/mo',
+        year:'90',
+        month:'9',
         free:'2 months free'
 
     },
@@ -17,8 +17,8 @@ const Data =[
     {
         name:'Advanced',
         img:advanced,
-        year:'$120/yr',
-        month:'$12/mo',
+        year:'120',
+        month:'12',
         free:'2 months free'
 
     },
@@ -26,8 +26,8 @@ const Data =[
     {
         name:'Pro',
         img:pro,
-        year:'$150/yr',
-        month:'$15/mo',
+        year:'150',
+        month:'15',
         free:'2 months free'
 
     }

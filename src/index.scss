@@ -21,17 +21,164 @@ $alasbaster:hsl(231, 100%, 99%);
 $white:hsl(0, 0%, 100%);
 
 
+body{
+    background-color:$mongolisa;
+    max-height: 100vh;
 
+}
 
+.main{
+
+}
 
 
 
 .header{
-    background-image: url('../src/assets/images/bg-sidebar-mobile.svg');
- background-position: center;
- background-size: 100%;
- background-repeat: no-repeat;
- min-height: 30vh;
+
+width: 100%;
+background-image: url('../src/assets/images/bg-sidebar-mobile.svg');
+background-position: center;
+background-size: 100%;
+background-repeat: no-repeat;
+height: 30vh;
+
+.steps{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+
+    .info{
+        display: flex;
+        gap: 5%;
+        align-items: center;
+    }
+
+    .stepp{
+        text-transform: uppercase;
+        color: $mongolisa;
+        font-size: 15px;
+        margin-bottom: 5px;
+        display: none;
+    
+    }
+
+    .stepabout{
+
+        color: white;
+        font-size: 15px;
+        font-weight: 500;
+        display: none;
+      
+    }
+
+  
+
+    .numbers{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border: 1.5px solid white;
+        color: white;
+    
+        font-weight: 500;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    }
+
+    
+
+.active{
+    background-color: $lightblue;
+    color: $marineblue;
+}
+}
+
+
+
+
+
+
+
+ 
+}
+
+.body{
+
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100px;
+    
+    background-color: $mongolisa;
+
+
+    .bodyword{
+        position: relative;
+        top: -70px;
+        
+    }
+    
+    
+
+    
+
+}
+.button{
+
+}
+
+.direction{
+    background-color:white;
+    padding: 10px 0;
+    padding-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: green;
+    
+}
+
+.back{
+    border: none;
+    color: $coolgray;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 3%;
+}
+.backk{
+    border: none;
+    color: $coolgray;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 3%;
+    visibility: hidden;
+}
+
+
+
+.next{
+    background-color: $marineblue;
+    color: $lightgray;
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-right: 3%;
+}
+.submit{
+    background-color: $purplishblue;
+    color: $white;
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-right: 3%;
 }
 
 .personalinfodiv{
@@ -39,6 +186,8 @@ $white:hsl(0, 0%, 100%);
     background-color: white;
     width: 95%;
     margin: 0 auto;
+    border-radius: 5px;
+    padding: 20px 0;
 
     div{
         
@@ -46,7 +195,7 @@ $white:hsl(0, 0%, 100%);
     }
     
     h1{
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         margin-left: 10px;
         color: $marineblue;
         font-size: 25px;
@@ -54,6 +203,8 @@ $white:hsl(0, 0%, 100%);
     form{
         display: flex;
         flex-direction: column;
+        width: 95%;
+        margin: 0 auto;
         input{
             display: block;
             width: 100%;
@@ -63,9 +214,14 @@ $white:hsl(0, 0%, 100%);
             border-radius: 5px;
             border: 1px solid $coolgray;
             padding-left: 5%;
+            color: $marineblue;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: capitalize;
 
             &:focus{
                 outline: none;
+                border: 1.5px solid $marineblue;
                 
             }
 
@@ -73,13 +229,14 @@ $white:hsl(0, 0%, 100%);
                 color:$coolgray;
                 font-weight: 700;
                 font-size: 15px;
+                
             }
         }
         
     }
     p{
         width: 85%;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         margin-left: 10px;
         color: $coolgray;
     }
@@ -94,6 +251,8 @@ $white:hsl(0, 0%, 100%);
          font-weight: 500;
          display: block;
          margin-bottom: 5px;
+         display: flex;
+         justify-content: space-between;
       }
       
       small{
@@ -105,32 +264,43 @@ $white:hsl(0, 0%, 100%);
 .plandiv{
     width: 95%;
     margin: 0 auto;
-    padding-left: 10px;
+    background-color: white;
+    padding: 20px 0;
+    border-radius: 8px;
 h1{
     color: $marineblue;
     font-size: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-left: 5%;
+
 }
 
-p{
+.planp{
     color: $coolgray;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-left: 5%;
+    width: 80%;
+    line-height: 22px;
 }
 
 .Advanced, .Arcade, .Pro{
 
     border:  0.07rem solid $marineblue;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 13px;
     border-radius: 5px;
     display: flex;
     padding: 10px 15px;
     gap: 10px;
+    width: 90%;
+    
     
 
 }
 
 .background{
     background-color:$mongolisa;
+    border: 1.5px solid $marineblue;
 }
 .word{
     small{
@@ -142,6 +312,12 @@ p{
     h4{
         color: $marineblue;
         font-weight: 500;
+    }
+    p{
+        color: $coolgray;
+        font-size: 15px;
+        font-weight: 500;
+
     }
 }
 
@@ -175,12 +351,15 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 90%;
+    margin: 0 auto;
 
     gap: 5%;
     background-color: $mongolisa;
     border-radius: 8px;
     p{
-        font-weight: 500;
+        font-weight: 700;
+        color: $marineblue;
     }
 
     .monthly{
@@ -198,26 +377,42 @@ p{
     width: 95%;
     margin: 0 auto;
     padding-left: 10px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px 0;
 
 
 
     .addsword{
-        margin-bottom: 8px;
+        margin-bottom: 15px;
         color: $coolgray;
+        margin-left: 5%;
+        width: 80%;
+        
+
     }
     h1{
-        margin-bottom: 8px;
+        margin-bottom: 15px;
         color: $marineblue;
+        margin-left: 5%;
     }
 
 
     .divchecked{
+
+        margin: 0 auto;
         
         margin-bottom: 20px;
+        width: 90%;
+       
         border: 1.5px solid $lightgray;
         border-radius: 5px;
         padding: 12px;
         background-color: $alasbaster;
+
+        
+
+
 
         .price{
             color: $purplishblue;
@@ -250,8 +445,203 @@ p{
         }
     
     }
+
+    .background{
+        background-color:$mongolisa;
+        border: 1.5px solid $purplishblue;
+    }
+}
+
+.finish{
+    background-color: white;
+    padding: 20px 0;
+    border-radius: 5px;
+    width: 95%;
+    margin: 0 auto;
+
+    h1{
+        color: $marineblue;
+        margin-bottom: 8px;
+        margin-left: 5%;
+    }
+
+    .finishp{
+        color: $coolgray;
+    margin-bottom: 8px;
+    margin-left: 5%;
+    }
+
+    .finishword{
+        background-color: $lightgray;
+        
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding: 10px 10px;
+
+        h4{
+            color: $marineblue;
+        }
+
+        .finishplan{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+
+            padding-bottom: 10px;
+            margin-bottom:15px;
+            border-bottom: 1px solid $coolgray;
+
+            .change{
+                color: $coolgray;
+                text-decoration: underline;
+
+
+
+            }
+            
+            .pick1{
+                color: $marineblue;
+                font-weight: 700;
+                font-size: 15px;
+            }
+        }
+
+        .filtername{
+            font-weight: 400;
+            color: $coolgray;
+        }
+
+        .filterprice{
+            font-weight: 500;
+            color: $marineblue;
+            font-size: 15px;
+        }
+
+        .filterarray{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            margin-bottom: 25px;
+            
+        }
+
+      
+    }
+    .finishtotal{
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        margin-top: 20px;
+        color: $coolgray;
+        .total{
+            font-weight: 500;
+            font-size: 16px;
+            color: $purplishblue;
+        }
+    }
 }
 
 
+@media (min-width:650px) {
 
+    .main{
+        display: flex;
+        background-color: white;
+        padding: 20px;
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 30px;
+        border-radius: 10px;
+ 
+    }
+
+    
+
+    .body{
+        width: 200%;
+        background-color: white;
+
+        .bodyword{
+            top: 0;
+            margin-top: 0;
+            padding-left: 20px;
+        
+            
+        }
+    }
+
+    .header{
+        background-image: url('../src/assets/images/bg-sidebar-desktop.svg');
+        background-position: center bottom;
+        background-size:cover;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        background-repeat: no-repeat;
+        padding-left: 30px;
+        padding-top: 20px;
+        border-radius: 8px;
+        width: 90%;        
+        .steps{
+            flex-direction: column;
+            gap: 30px;
+
+            .stepp{
+                display: block;
+
+            }
+
+            .stepabout{
+                display: block;
+                font-size: 17px
+            }
+        }
+        
+        
+    }
+
+    .plandiv{
+
+
+        .Advanced, .Pro ,.Arcade{
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 100px;
+            height: 30vh;
+        }
+
+        .chooseplan{
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .word{
+            order: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            small{
+
+                font-size: 11px;
+                font-weight: 700;
+            }
+        }
+        .planword{
+            order: 1;
+            
+        }
+     
+    }
+
+    .direction{
+
+        background-color: white;
+        width: 85%;
+        margin: 0 auto;
+    }
+}
 

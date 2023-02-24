@@ -5,9 +5,17 @@ const Singleadd = ({time,name,text,yearly,monthly}) => {
 
     const {handlechecked,isChecked}=useGlobalcontext()
 
+    const [add,setadd]=useState(false)
+
+    const addname=()=>{
+
+        setadd(!add)
+        console.log('tolu')
+    }
+
    
   return (
-    <div className='divchecked'>
+    <div className={add? `divchecked background`:'divchecked' } onClick={addname}>
         
 
     <div className='online-div'>
