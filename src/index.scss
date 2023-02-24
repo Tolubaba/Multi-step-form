@@ -37,10 +37,11 @@ body{
 
 width: 100%;
 background-image: url('../src/assets/images/bg-sidebar-mobile.svg');
-background-position: center;
-background-size: 100%;
+background-position: center top;
+background-size: cover;
 background-repeat: no-repeat;
 height: 30vh;
+background-color: red;
 
 .steps{
     display: flex;
