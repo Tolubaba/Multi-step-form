@@ -5,10 +5,13 @@ const AppContext=createContext();
 
 const AppProvider = ({children}) => {
 
+
     const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setnumber] = useState('');
   const [errors, setErrors] = useState({});
+
+  const [confirm ,setconfirm]=useState(false)
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -144,7 +147,7 @@ setErrors(errors)
 
 
   return (
-    <AppContext.Provider value={{isChecked,handlechecked,selectedoption,next,prev,step,pick,setpick,page,setpage,pick1,pick2,setpick1,setpick2,setstep,validateForm,handleSubmit,handleChange,name,number,email,errors}}>
+    <AppContext.Provider value={{isChecked,handlechecked,selectedoption,next,prev,step,pick,setpick,page,setpage,pick1,pick2,setpick1,setpick2,setstep,validateForm,handleSubmit,handleChange,name,number,email,errors, confirm, setconfirm}}>
 {children}
 
     </AppContext.Provider>

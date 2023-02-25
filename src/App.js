@@ -21,14 +21,14 @@ const App = () => {
 
 
 
- const {step,selectedoption,prev,next,handleSubmit}=useGlobalcontext();
+ const {step,selectedoption,prev,next,handleSubmit,setconfirm,confirm}=useGlobalcontext();
 
  const getstep=()=>{
 
  if(step===4){
 
   return(
-    <div className='direction'> <button onClick={prev} className='back'>Go Back</button> <button className='submit'>Confirm</button></div>
+    <div className='direction'> <button onClick={prev} className='back'>Go Back</button> <button onClick={()=>setconfirm(true)} className='submit'>Confirm</button></div>
   )
  }
  else{
@@ -44,26 +44,28 @@ const App = () => {
 
       <Header/>
 
-      <div className='body'>
+      {!confirm?  <div className='body'>
 
-        <div className='bodyword'>
-
-        
-      {step===1 && <MyForm/>} 
-      {step===2 && <Plan time={time} changetime={changetime}/>}
-       {step==3 && <Adds time={time} changetime={changetime}/>} 
-       {step==4 && <Finish selectedoption={selectedoption} time={time}/>}
-       </div>
+<div className='bodyword'>
 
 
-       { <div className='button'>
+{step===1 && <MyForm/>} 
+{step===2 && <Plan time={time} changetime={changetime}/>}
+{step==3 && <Adds time={time} changetime={changetime}/>} 
+{step==4 && <Finish selectedoption={selectedoption} time={time}/>}
+</div>
+
+
+{ <div className='button'>
 
 {step===1?<div className='direction'> <button onClick={prev} className='backk'>Go Back</button><button className='next' onClick={next}>Next Step</button></div>:getstep()}
 
 
 </div> }
 
-      </div>
+</div>:<Thankyou/>
+
+}
 
      
    

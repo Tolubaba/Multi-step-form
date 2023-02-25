@@ -547,6 +547,37 @@ h1{
     }
 }
 
+.divthankyou{
+
+    background-color: white;
+    text-align: center;
+    border-radius: 8px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: -70px;
+    padding: 50px 0;
+    img{
+
+        width: 60px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    h1{
+
+        color: $marineblue;
+        margin-bottom: 20px;
+
+    }
+
+    p{
+        width: 88%;
+        line-height: 23px;
+        margin: 0 auto;
+        color: $coolgray;
+    }
+}
+
 
 @media (min-width:650px) {
 
