@@ -41,7 +41,6 @@ background-position: center top;
 background-size: cover;
 background-repeat: no-repeat;
 height: 30vh;
-background-color: red;
 
 .steps{
     display: flex;
@@ -677,6 +676,17 @@ h1{
         background-color: white;
         width: 85%;
         margin: 0 auto;
+    }
+
+    .divthankyou{
+        width: 200%;
+        top: 0;
+        padding-top: 120px;
+        p{
+            width: 59%;
+            font-size: 17px;
+        }
+        
     }
 }
 
